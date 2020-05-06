@@ -1,0 +1,18 @@
+// This functions iterates over all the elements 
+// and adds them, based on a statement, in a 
+// new list
+
+(require "/fusion/list")
+(define (choose lst)
+  (let loop [(i 0),
+             (result (stretchy_list))]
+    (if (= i (size lst))
+      result
+      (let [(e (element lst i))]
+        (loop
+          (+ 1 i)
+          (if (=== (symbol_to_string (. e "category")) "BankAccount")
+            (add_m result (. e "id"))
+            result))))))
+
+(choose payments)

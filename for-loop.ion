@@ -1,0 +1,11 @@
+// It's similar to map in js 
+// This applies an operation to each element in the list 
+
+(for_list 
+  [ (payment payments) ] 
+  (if 
+    (=== (symbol_to_string (. payment "category")) "BankAccount") 
+    (. payment "id")
+    null
+  )
+)
